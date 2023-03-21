@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { NavController } from '@ionic/angular';
 @Component({
   selector: 'app-studentstatuspage',
   templateUrl: './studentstatuspage.page.html',
@@ -7,7 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StudentstatuspagePage implements OnInit {
 
-  constructor() { }
+  selectedValue: string | undefined;
+
+  constructor(private navCtrl: NavController) { }
+
+  Navigation(){
+    if (this.selectedValue === 'ns' || this.selectedValue === 't'){
+      this.navCtrl.navigateForward('newandtransferstudent');
+    } else {
+      this.navCtrl.navigateForward('oldstudent');
+    }
+  }
+
 
   ngOnInit() {
   }

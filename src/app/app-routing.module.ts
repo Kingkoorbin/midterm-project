@@ -23,6 +23,10 @@ const routes: Routes = [
     path: 'newandtransferstudent',
     loadChildren: () => import('./newandtransferstudent/newandtransferstudent.module').then( m => m.NewandtransferstudentPageModule)
   },
+  {
+    path: 'oldstudent',
+    loadChildren: () => import('./oldstudent/oldstudent.module').then( m => m.OldstudentPageModule)
+  },
 ];
 
 @NgModule({
