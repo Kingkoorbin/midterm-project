@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { AlertController, NavController } from '@ionic/angular';
+import { alertController } from '@ionic/core';
 @Component({
   selector: 'app-studentstatuspage',
   templateUrl: './studentstatuspage.page.html',
@@ -9,15 +10,22 @@ export class StudentstatuspagePage implements OnInit {
 
   selectedValue: string | undefined;
 
-  constructor(private navCtrl: NavController) { }
+  constructor(private navCtrl: NavController, private alertController: AlertController) { }
 
   Navigation(){
-    if (this.selectedValue === 'ns' || this.selectedValue === 't'){
+    if (!this.selectedValue) {
+      const alert = this.alertController.create({
+        header: 'Identify Student Status',
+        buttons: ['OK'],
+    });
+    alert.then((alert) => alert.present());
+    }
+      else if (this.selectedValue === 'ns' || this.selectedValue === 't'){
       this.navCtrl.navigateForward('newandtransferstudent');
     } else {
       this.navCtrl.navigateForward('oldstudent');
     }
-  }
+    }
 
 
   ngOnInit() {
