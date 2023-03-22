@@ -25,10 +25,18 @@
             <ion-label class="hays" style="font-weight: bolder; font-family: 'Times New Roman', Times, serif; font-size: 30px;">TEXT SIZE SET TO: <ion-label style="color: green;">{{selectedSizeString}}</ion-label></ion-label>
           </ion-row><br>
           <ion-row>
-            <ion-label class="hays" style="font-weight: bolder; font-family: 'Times New Roman', Times, serif; font-size: 30px;">DARK MODE: {{ toggleLabel ? 'ON' : 'OFF' }}</ion-label>
+            <ion-label class="hays" style="font-weight: bolder; font-family: 'Times New Roman', Times, serif; font-size: 30px;">DARK MODE: <ion-label [ngStyle]="toggleLabel ? {color: 'green'} : {color: 'red'}">{{ toggleLabel ? 'ON' : 'OFF' }}</ion-label></ion-label>
+          </ion-row><br><br><br><br>
+          <ion-row>
+            <ion-col>
+              <ion-button (click)="DisplaySetSize(); "  expand="block" color="success">SET</ion-button>
+            </ion-col>
+            <ion-col>
+              <ion-button (click)="GoBack()" expand="block">BACK</ion-button>
+            </ion-col>
           </ion-row>
         </ion-grid><br><br><br><br>
 
-        <ion-button (click)="DisplaySetSize()">SET</ion-button>
+
   </ion-content>
 </ion-content>

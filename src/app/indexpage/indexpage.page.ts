@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { StudentstatuspagePage } from '../studentstatuspage/studentstatuspage.page';
+import { SettingspagePage } from '../settingspage/settingspage.page';
 
 @Component({
   selector: 'app-indexpage',
@@ -13,6 +14,9 @@ export class IndexpagePage implements OnInit {
 
   goToStudentStatus(){
     this.navCtrl.navigateForward('studentstatuspage');
+  }
+  goToSettings(){
+    this.navCtrl.navigateForward('settingspage');
   }
 
   ngOnInit() {

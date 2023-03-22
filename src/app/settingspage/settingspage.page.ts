@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
+import { IndexpagePage } from '../indexpage/indexpage.page';
 
 @Component({
   selector: 'app-settingspage',
@@ -12,10 +14,12 @@ export class SettingspagePage implements OnInit {
 
   toggleLabel = 'DARK MODE';
 
-  toggleLabel2 = '';
 
-  constructor() { }
+  constructor(private navCtrl: NavController) { }
 
+  GoBack() {
+    this.navCtrl.navigateBack('indexpage');
+  }
   toggleSize(){
     this.selectedSize = Math.round(this.selectedSize);
   }
@@ -40,17 +44,17 @@ export class SettingspagePage implements OnInit {
     }
   }
 
+
   ngOnInit() {
   }
-
   LightDarkMode(event: CustomEvent){
     if(event.detail.checked){
       this.toggleLabel = 'LIGHT MODE';
     }
     else {
       this.toggleLabel = 'DARK MODE';
-
     }
   }
+
 
 }

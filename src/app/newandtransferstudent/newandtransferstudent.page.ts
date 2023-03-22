@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SettingspagePage } from '../settingspage/settingspage.page';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-newandtransferstudent',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewandtransferstudentPage implements OnInit {
 
-  constructor() { }
+  constructor(private navCtrl: NavController) { }
 
   ngOnInit() {
+  }
+  goToSettings(){
+    this.navCtrl.navigateForward('settingspage');
   }
 
 }
