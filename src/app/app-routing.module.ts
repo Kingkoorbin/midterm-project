@@ -31,6 +31,10 @@ const routes: Routes = [
     path: 'settingspage',
     loadChildren: () => import('./settingspage/settingspage.module').then( m => m.SettingspagePageModule)
   },
+  {
+    path: 'enrollmentconfirm',
+    loadChildren: () => import('./enrollmentconfirm/enrollmentconfirm.module').then( m => m.EnrollmentconfirmPageModule)
+  },
 ];
 
 @NgModule({

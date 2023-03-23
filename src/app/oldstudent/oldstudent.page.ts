@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { SettingspagePage } from '../settingspage/settingspage.page';
+import { NavController } from '@ionic/angular';
+import { EnrollmentconfirmPage } from '../enrollmentconfirm/enrollmentconfirm.page';
 
 @Component({
   selector: 'app-oldstudent',
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OldstudentPage implements OnInit {
 
-  constructor() { }
+  radioSelected = false;
+
+  constructor(private navCtrl: NavController) { }
 
   ngOnInit() {
   }
+  goToSettings(){
+    this.navCtrl.navigateForward('settingspage');
+  }
 
+  goToEnrollmentConfirm(){
+    this.navCtrl.navigateForward('enrollmentconfirm');
+  }
+
+  radioButtonSelected() {
+    this.radioSelected = true;
+ }
 }
