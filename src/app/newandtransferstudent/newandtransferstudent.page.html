@@ -64,7 +64,7 @@
       <ion-label
         style="font-weight: bolder; background-color: transparent; margin-right: 20px; font-size: 20px;">Course:</ion-label>
       <ion-item style="flex: 1;">
-        <ion-select placeholder="BSIT" [(ngModel)]="selectedCourse" (ionChange)="onCourseSelection()">
+        <ion-select placeholder="BSIT" [(ngModel)]="selectedCourse">
           <ion-select-option value="BSIT">BSIT</ion-select-option>
           <ion-select-option value="BSIS">BSIS</ion-select-option>
           <ion-select-option value="BAEL">BAEL</ion-select-option>
@@ -76,39 +76,239 @@
         <ion-col>SUBJECT</ion-col>
         <ion-col>UNIT</ion-col>
       </ion-row>
-      <ion-row *ngFor="let subject of subjects; let i = index" style="border: 2px solid; background-color: white;">
+      <ion-row *ngIf="selectedCourse === 'BSIT'" style="border: 2px solid; background-color: white;">
         <ion-col style="display: flex; justify-content: center; align-items: center;">
           <ion-item lines="none">
-            <ion-checkbox [(ngModel)]="selectedSubjects[i]" slot="start"></ion-checkbox>
-            <ion-label>{{subject}}</ion-label>
+            <ion-checkbox (ionChange)="calculateTotal()" slot="start"></ion-checkbox>
+            <ion-label>IT 209</ion-label>
           </ion-item>
         </ion-col>
         <ion-col
-          style="display: flex; justify-content: center; align-items: center; border-left: 1px solid black;">{{units[i]}}</ion-col>
+          style="display: flex; justify-content: center; align-items: center; border-left: 1px solid black;">5</ion-col>
+      </ion-row>
+      <ion-row *ngIf="selectedCourse === 'BSIT'" style="border: 2px solid; background-color: white;">
+        <ion-col style="display: flex; justify-content: center; align-items: center;">
+          <ion-item lines="none">
+            <ion-checkbox (ionChange)="calculateTotal()" slot="start"></ion-checkbox>
+            <ion-label >IT 208</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col
+          style="display: flex; justify-content: center; align-items: center; border-left: 1px solid black;">5</ion-col>
+      </ion-row>
+      <ion-row *ngIf="selectedCourse === 'BSIT'" style="border: 2px solid; background-color: white;">
+        <ion-col style="display: flex; justify-content: center; align-items: center;">
+          <ion-item lines="none">
+            <ion-checkbox (ionChange)="calculateTotal()" slot="start"></ion-checkbox>
+            <ion-label>IT 207</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col
+          style="display: flex; justify-content: center; align-items: center; border-left: 1px solid black;">5</ion-col>
+      </ion-row>
+      <ion-row *ngIf="selectedCourse === 'BSIT'" style="border: 2px solid; background-color: white;">
+        <ion-col style="display: flex; justify-content: center; align-items: center;">
+          <ion-item lines="none">
+            <ion-checkbox (ionChange)="calculateTotal()" slot="start"></ion-checkbox>
+            <ion-label>IT 301</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col
+          style="display: flex; justify-content: center; align-items: center; border-left: 1px solid black;">5</ion-col>
+      </ion-row>
+      <ion-row *ngIf="selectedCourse === 'BSIT'" style="border: 2px solid; background-color: white;">
+        <ion-col style="display: flex; justify-content: center; align-items: center;">
+          <ion-item lines="none">
+            <ion-checkbox (ionChange)="calculateTotal()" slot="start"></ion-checkbox>
+            <ion-label>IT 101</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col
+          style="display: flex; justify-content: center; align-items: center; border-left: 1px solid black;">5</ion-col>
+      </ion-row>
+      <ion-row *ngIf="selectedCourse === 'BSIT'" style="border: 2px solid; background-color: white;">
+        <ion-col style="display: flex; justify-content: center; align-items: center;">
+          <ion-item lines="none">
+            <ion-checkbox (ionChange)="calculateTotal()" slot="start"></ion-checkbox>
+            <ion-label>IT 102</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col
+          style="display: flex; justify-content: center; align-items: center; border-left: 1px solid black;">5</ion-col>
+      </ion-row>
+      <ion-row *ngIf="selectedCourse === 'BSIT'" style="border: 2px solid; background-color: white;">
+        <ion-col style="display: flex; justify-content: center; align-items: center;">
+          <ion-item lines="none">
+            <ion-checkbox (ionChange)="calculateTotal()" slot="start"></ion-checkbox>
+            <ion-label>IT 103</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col
+          style="display: flex; justify-content: center; align-items: center; border-left: 1px solid black;">5</ion-col>
+      </ion-row>
+      <ion-row *ngIf="selectedCourse === 'BSIS'" style="border: 2px solid; background-color: white;">
+        <ion-col style="display: flex; justify-content: center; align-items: center;">
+          <ion-item lines="none">
+            <ion-checkbox (ionChange)="calculateTotal()" slot="start"></ion-checkbox>
+            <ion-label>IS 201</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col
+          style="display: flex; justify-content: center; align-items: center; border-left: 1px solid black;">5</ion-col>
+      </ion-row>
+      <ion-row *ngIf="selectedCourse === 'BSIS'" style="border: 2px solid; background-color: white;">
+        <ion-col style="display: flex; justify-content: center; align-items: center;">
+          <ion-item lines="none">
+            <ion-checkbox (ionChange)="calculateTotal()" slot="start"></ion-checkbox>
+            <ion-label>IS 202</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col
+          style="display: flex; justify-content: center; align-items: center; border-left: 1px solid black;">5</ion-col>
+      </ion-row>
+      <ion-row *ngIf="selectedCourse === 'BSIS'" style="border: 2px solid; background-color: white;">
+        <ion-col style="display: flex; justify-content: center; align-items: center;">
+          <ion-item lines="none">
+            <ion-checkbox (ionChange)="calculateTotal()" slot="start"></ion-checkbox>
+            <ion-label>IS 203</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col
+          style="display: flex; justify-content: center; align-items: center; border-left: 1px solid black;">5</ion-col>
+      </ion-row>
+      <ion-row *ngIf="selectedCourse === 'BSIS'" style="border: 2px solid; background-color: white;">
+        <ion-col style="display: flex; justify-content: center; align-items: center;">
+          <ion-item lines="none">
+            <ion-checkbox (ionChange)="calculateTotal()" slot="start"></ion-checkbox>
+            <ion-label>IS 204</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col
+          style="display: flex; justify-content: center; align-items: center; border-left: 1px solid black;">5</ion-col>
+      </ion-row>
+      <ion-row *ngIf="selectedCourse === 'BSIS'" style="border: 2px solid; background-color: white;">
+        <ion-col style="display: flex; justify-content: center; align-items: center;">
+          <ion-item lines="none">
+            <ion-checkbox (ionChange)="calculateTotal()" slot="start"></ion-checkbox>
+            <ion-label>IS 205</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col
+          style="display: flex; justify-content: center; align-items: center; border-left: 1px solid black;">5</ion-col>
+      </ion-row>
+      <ion-row *ngIf="selectedCourse === 'BSIS'" style="border: 2px solid; background-color: white;">
+        <ion-col style="display: flex; justify-content: center; align-items: center;">
+          <ion-item lines="none">
+            <ion-checkbox (ionChange)="calculateTotal()" slot="start"></ion-checkbox>
+            <ion-label>IS 206</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col
+          style="display: flex; justify-content: center; align-items: center; border-left: 1px solid black;">5</ion-col>
+      </ion-row>
+      <ion-row *ngIf="selectedCourse === 'BSIS'" style="border: 2px solid; background-color: white;">
+        <ion-col style="display: flex; justify-content: center; align-items: center;">
+          <ion-item lines="none">
+            <ion-checkbox (ionChange)="calculateTotal()" slot="start"></ion-checkbox>
+            <ion-label>IS 207</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col
+          style="display: flex; justify-content: center; align-items: center; border-left: 1px solid black;">5</ion-col>
+      </ion-row>
+      <ion-row *ngIf="selectedCourse === 'BAEL'" style="border: 2px solid; background-color: white;">
+        <ion-col style="display: flex; justify-content: center; align-items: center;">
+          <ion-item lines="none">
+            <ion-checkbox (ionChange)="calculateTotal()" slot="start"></ion-checkbox>
+            <ion-label>EL 203</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col
+          style="display: flex; justify-content: center; align-items: center; border-left: 1px solid black;">5</ion-col>
+      </ion-row>
+      <ion-row *ngIf="selectedCourse === 'BAEL'" style="border: 2px solid; background-color: white;">
+        <ion-col style="display: flex; justify-content: center; align-items: center;">
+          <ion-item lines="none">
+            <ion-checkbox (ionChange)="calculateTotal()" slot="start"></ion-checkbox>
+            <ion-label>EL 204</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col
+          style="display: flex; justify-content: center; align-items: center; border-left: 1px solid black;">5</ion-col>
+      </ion-row>
+      <ion-row *ngIf="selectedCourse === 'BAEL'" style="border: 2px solid; background-color: white;">
+        <ion-col style="display: flex; justify-content: center; align-items: center;">
+          <ion-item lines="none">
+            <ion-checkbox (ionChange)="calculateTotal()" slot="start"></ion-checkbox>
+            <ion-label>EL 205</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col
+          style="display: flex; justify-content: center; align-items: center; border-left: 1px solid black;">5</ion-col>
+      </ion-row>
+      <ion-row *ngIf="selectedCourse === 'BAEL'" style="border: 2px solid; background-color: white;">
+        <ion-col style="display: flex; justify-content: center; align-items: center;">
+          <ion-item lines="none">
+            <ion-checkbox (ionChange)="calculateTotal()" slot="start"></ion-checkbox>
+            <ion-label>EL 206</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col
+          style="display: flex; justify-content: center; align-items: center; border-left: 1px solid black;">5</ion-col>
+      </ion-row>
+      <ion-row *ngIf="selectedCourse === 'BAEL'" style="border: 2px solid; background-color: white;">
+        <ion-col style="display: flex; justify-content: center; align-items: center;">
+          <ion-item lines="none">
+            <ion-checkbox (ionChange)="calculateTotal()" slot="start"></ion-checkbox>
+            <ion-label>EL 207</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col
+          style="display: flex; justify-content: center; align-items: center; border-left: 1px solid black;">5</ion-col>
+      </ion-row>
+      <ion-row *ngIf="selectedCourse === 'BAEL'" style="border: 2px solid; background-color: white;">
+        <ion-col style="display: flex; justify-content: center; align-items: center;">
+          <ion-item lines="none">
+            <ion-checkbox (ionChange)="calculateTotal()" slot="start"></ion-checkbox>
+            <ion-label>EL 208</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col
+          style="display: flex; justify-content: center; align-items: center; border-left: 1px solid black;">5</ion-col>
+      </ion-row>
+      <ion-row *ngIf="selectedCourse === 'BAEL'" style="border: 2px solid; background-color: white;">
+        <ion-col style="display: flex; justify-content: center; align-items: center;">
+          <ion-item lines="none">
+            <ion-checkbox (ionChange)="calculateTotal()" slot="start"></ion-checkbox>
+            <ion-label>EL 209</ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col
+          style="display: flex; justify-content: center; align-items: center; border-left: 1px solid black;">5</ion-col>
       </ion-row>
     </ion-grid>
   </div><br><br>
   <div
     style="border: 1px solid; margin-left: 30px; margin-right: 30px; padding-top: 10px; padding-bottom: 10px; padding-left: 5px; padding-right: 5px; background-color: lightblue;">
-    <ion-label style="font-weight: bolder; font-size: 25px;">TOTAL UNITS FOR THIS SEMESTER : <ion-label [ngStyle]="{'color': getTotalUnitsColor()}">{{calculateTotalUnits()}}</ion-label></ion-label>
+    <ion-label style="font-weight: bolder; font-size: 25px;">TOTAL UNITS FOR THIS SEMESTER : <ion-label [ngClass]="totalAmountClass">{{totalAmount}}</ion-label></ion-label>
   </div><br><br>
   <div
     style="border: 1px solid; margin-left: 30px; margin-right: 30px; padding-top: 10px; padding-bottom: 10px; padding-left: 5px; padding-right: 5px; background-color: lightblue;">
     <h2 style="font-weight: bolder; text-align: center;">REQUIREMENTS</h2><br>
     <ion-item lines="none" style="padding-left: 10px; padding-right: 10px;">
-      <ion-checkbox id="tor-nt" slot="start"></ion-checkbox>
+      <ion-checkbox [(ngModel)]="req1" id="tor-nt" slot="start"></ion-checkbox>
       <ion-label>TOR</ion-label>
     </ion-item><br>
     <ion-item lines="none" style="padding-left: 10px; padding-right: 10px;">
-      <ion-checkbox  id="diploma-nt" slot="start"></ion-checkbox>
+      <ion-checkbox [(ngModel)]="req2" id="diploma-nt" slot="start"></ion-checkbox>
       <ion-label>DIPLOMA</ion-label>
     </ion-item><br>
     <ion-item lines="none" style="padding-left: 10px; padding-right: 10px;">
-      <ion-checkbox id="form137-nt" slot="start"></ion-checkbox>
+      <ion-checkbox [(ngModel)]="req3" id="form137-nt" slot="start"></ion-checkbox>
       <ion-label>FORM 137</ion-label>
     </ion-item><br>
     <ion-item lines="none" style="padding-left: 10px; padding-right: 10px;">
-      <ion-checkbox id="2x2pic-nt" slot="start"></ion-checkbox>
+      <ion-checkbox [(ngModel)]="req4" id="2x2pic-nt" slot="start"></ion-checkbox>
       <ion-label>2x2 PICTURE</ion-label>
     </ion-item>
   </div><br><br>

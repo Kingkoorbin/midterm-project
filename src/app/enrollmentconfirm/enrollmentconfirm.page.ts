@@ -20,9 +20,8 @@ export class EnrollmentconfirmPage implements OnInit {
   ntNumran: string = 'ntNumRan';
   ntContactNumber: string = 'ntContactNumber';
   selectedCourse: string = 'SelectedCourse';
-  selectedSubjects: string[] = [];
-  totalUnits: number = 0;
-  totalUnitCost: number = 0;
+  selectedSubs: any;
+  totalAmount: number = 0;
 
   goToSettings(){
     this.navCtrl.navigateForward('settingspage');
@@ -41,16 +40,14 @@ export class EnrollmentconfirmPage implements OnInit {
       this.ntNumran = params['ntNumran'];
       this.ntContactNumber = params['ntContactNumber'];
       this.selectedCourse = params['selectedCourse'];
-      this.selectedSubjects = params['selectedSubjects'];
-      this.totalUnits = parseInt(params['totalUnits']);
-      this.totalUnitCost = this.calculateTotalUnitCost(this.totalUnits);
+      this.selectedSubs = params['selectedSubs'];
+      this.totalAmount = Number(params['ntTotalAmount']);
     });
     }
-    calculateTotalUnitCost(units: number): number {
+    calculateTotalUnitCost(): number {
       const UNIT_COST = 726.35;
-      const totalUnitCost = Math.ceil(units / 5) * UNIT_COST;
+      const totalUnitCost = Math.ceil(this.totalAmount / 5) * UNIT_COST;
       return totalUnitCost;
     }
-
   }
 
