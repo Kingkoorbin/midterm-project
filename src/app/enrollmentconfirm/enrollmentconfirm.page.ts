@@ -10,7 +10,6 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./enrollmentconfirm.page.scss'],
 })
 export class EnrollmentconfirmPage implements OnInit {
-
   ntLastname: string = 'ntLastname';
   ntMiddlename: string = 'ntMiddlename';
   ntFirstname: string = 'ntFirstname';
@@ -23,11 +22,14 @@ export class EnrollmentconfirmPage implements OnInit {
   selectedSubs: any;
   totalAmount: number = 0;
 
-  goToSettings(){
+  goToSettings() {
     this.navCtrl.navigateForward('settingspage');
   }
 
-  constructor(private navCtrl: NavController, private ActivatedRoute: ActivatedRoute) { }
+  constructor(
+    private navCtrl: NavController,
+    private ActivatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit() {
     this.ActivatedRoute.queryParams.subscribe((params) => {
@@ -43,11 +45,10 @@ export class EnrollmentconfirmPage implements OnInit {
       this.selectedSubs = params['selectedSubs'];
       this.totalAmount = Number(params['ntTotalAmount']);
     });
-    }
-    calculateTotalUnitCost(): number {
-      const UNIT_COST = 726.35;
-      const totalUnitCost = Math.ceil(this.totalAmount / 5) * UNIT_COST;
-      return totalUnitCost;
-    }
   }
-
+  calculateTotalUnitCost(): number {
+    const UNIT_COST = 726.35;
+    const totalUnitCost = Math.ceil(this.totalAmount / 5) * UNIT_COST;
+    return totalUnitCost;
+  }
+}
